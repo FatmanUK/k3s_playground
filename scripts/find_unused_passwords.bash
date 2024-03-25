@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+set -euxo pipefail
 
 PWS=$(ansible-vault view vaults/dev-vault.yml --vault-password-file vaults/dev-password.txt | awk -F: '/password/ {print $1}')
 
